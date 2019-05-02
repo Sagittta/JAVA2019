@@ -1,0 +1,49 @@
+import java.util.*;
+
+public class d04 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("ÇĞ¹øÀ» ÀÔ·ÂÇÏ¼¼¿ä ^!^");
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		if (num == 2401) {
+			System.out.println("°­Àº¼­");
+		} else if (num == 2402) {
+			System.out.println("°û°¡¿¬");
+		} else if (num == 2403) {
+			System.out.println("±è¹ÎÁö");
+		} else if (num == 2404) {
+			System.out.println("±èº½ÀÌ");
+		} else if (num == 2405) {
+			System.out.println("±è¼ÒÇö");
+		} else if (num == 2406) {
+			System.out.println("±èÃ¤¹Î");
+		} else if (num == 2407) {
+			System.out.println("³²Á¤À±");
+		} else if (num == 2408) {
+			System.out.println("¹Ú¼­¿¬");
+		} else if (num == 2409) {
+			System.out.println("¼­Çı¸²");
+		} else if (num == 2410) {
+			System.out.println("½ÅÃ¤¸°");
+		} else if (num == 2411) {
+			System.out.println("¾ç¼öºó");
+		} else if (num == 2412) {
+			System.out.println("¾öÇÏ´Ã");
+		} else if (num == 2413) {
+			System.out.println("¿øÃ¤¿¬");
+		} else if (num == 2414) {
+			System.out.println("À±¼öºó");
+		} else if (num == 2416) {
+			System.out.println("ÀÓÅÂÈñ");
+		} else if (num == 2417) {
+			System.out.println("ÀüÀºÁ¤");
+		} else if (num == 2418) {
+			System.out.println("Á¤À¯°æ");
+		} else if (num == 2419) {
+			System.out.println("ÇÔÁöÇö");
+		}
+	}
+
+}

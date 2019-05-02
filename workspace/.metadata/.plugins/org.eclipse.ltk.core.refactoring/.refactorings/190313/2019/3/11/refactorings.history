@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;d002&apos; to &apos;D0201&apos;&#x0D;&#x0A;- Original project: &apos;190313&apos;&#x0D;&#x0A;- Original element: &apos;d002&apos;&#x0D;&#x0A;- Renamed element: &apos;D0201&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;d002&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{d002.java[d002" matchStrategy="1" name="D0201" qualified="false" references="true" similarDeclarations="false" stamp="1552606640956" textual="false" version="1.0"/>
+</session>
