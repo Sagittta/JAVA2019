@@ -1,0 +1,21 @@
+package thread190612;
+
+class Top3 implements Runnable {
+
+	@Override
+	public void run() {
+		for (int i = 0; i < 30; i++) {
+			//스레드.지금스레드.이름가져오기(지금 어떤 스레드 쓰고 있는지.이름가져오기)
+			System.out.print((Thread.currentThread()).getName() + i + "\t");
+		}
+	}
+	
+}
+
+public class Runnable3Exam {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
