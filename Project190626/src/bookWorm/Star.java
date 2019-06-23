@@ -14,6 +14,7 @@ public class Star {
 	int star;
 	String text;
 	
+	//별점 주는 함수. 데이터베이스에 별점 주는 개수를 집어넣고, 평균을 구할 수 있도록 함.
 	public void giveStar() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -76,6 +77,7 @@ public class Star {
 		
 	}
 	
+	//보완할 점을 입력할 수 있도록 하는 함수.
 	public void writeMore() {
 		System.out.println("더 나은 프로그램을 위해 보완할 점을 입력해주세요. (입력 : 1, 종료 : 0)");
 		int a = sc.nextInt();

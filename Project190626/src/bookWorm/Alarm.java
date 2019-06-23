@@ -19,6 +19,7 @@ public class Alarm {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
+	//알람 시간 설정하는 함수. 올바르지 않은 시간 입력 시 한 번 더 입력할 수 있도록 함.
 	public void setAlarm() {
 		
 		try {
@@ -69,6 +70,7 @@ public class Alarm {
 		}
 	}
 	
+	//현재까지 기록된 알람 기록을 보여줌.
 	public void showAlarm() {
 		try {
 			String sql = "SELECT hour, minute FROM alarm";
@@ -97,10 +99,12 @@ public class Alarm {
 		}
 	}
 	
+	//알람이 울릴 시간을 문자열로 출력함.
 	public String toString() {
 		return ("알람이 " + getHour() + "시 " + getMinute() + "분에 울립니다.");
 	}
 
+	// 시간과 분을 설정할 때 사용하는 setter와 getter 함수
 	public void setHour(int hour) {
 		this.hour = hour;
 	}
