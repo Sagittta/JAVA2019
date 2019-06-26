@@ -62,9 +62,11 @@ public class Select {
 				break;
 				
 			case 3 :
+				t.selecTaste();
 				break;
 				
 			case 4 :
+				l.selectLevel();
 				break;
 				
 			case 5 :
