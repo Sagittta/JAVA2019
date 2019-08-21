@@ -13,7 +13,7 @@ public class Level {
 	private final String DB_URL = "jdbc:mysql://localhost:3306/pj_java";
 	private final String USER_NAME = "root";
 	private final String PASSWORD = "mirim2";
-
+	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
@@ -21,6 +21,7 @@ public class Level {
 	String sql;
 	int age, often, aLevel, oLevel, level;
 	
+	// 책 레벨 선택하는 함수
 	public void selectLevel() {
 		try {
 			Class.forName(JDBC_DRIVER);
@@ -29,8 +30,9 @@ public class Level {
 			selectAge();
 			
 			System.out.println("빈도수를 입력하시겠습니까 ? (1: Yes, 2: No)");
-			int o = sc.nextInt();
+			int o = Integer.parseInt(sc.nextLine());
 			switch (o) {
+				// 빈도수 입력하는 함수 불러옴.
 				case 1: selectOften();
 				break;
 				case 2: System.out.println("알겠습니다.");
@@ -46,10 +48,12 @@ public class Level {
 		
 	}
 
+	// 나이 입력하는 함수
 	public void selectAge() {
 		System.out.println("나이를 입력하세요 : ");
-		age = sc.nextInt();
+		age = Integer.parseInt(sc.nextLine());
 		
+		// 나잇대에 따라 레벨이 달라지도록 함.
 		if (age > 0) {
 			if (age < 8) {
 				aLevel = 1;
@@ -83,14 +87,25 @@ public class Level {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
-			while (rs.next()) {
+
+			// rs에 더이상 값이 없으면 '업데이트 예정입니다.' 문구를 출력함.
+			boolean rsa = rs.next();
+			if (rsa == false) {
+				System.out.println("업데이트 예정입니다.\n");
+			}
+
+			// rsa에 rs.next()를 넣어 위의 if문과 겹치지 않도록 함. 값 하나가 잘려서 나오지 않는 문제 해결!
+			while (rsa) {
 				int bookNo1 = rs.getInt("bookNo");
 				String title1 = rs.getString("title");
 				String author1 = rs.getString("author");
 				String country1 = rs.getString("country");
 				int pageNo1 = rs.getInt("pageNo");
+				
 				System.out.println(bookNo1 + ". " + title1 + ",\n\t작가 : " + author1 + ", 국가 : " + country1 + ", 페이지 수 : " + pageNo1);
+
+				// rsa에 rs.next()값을 넣어줘서 계속 갱신이 되도록 함.
+				rsa = rs.next();
 			}
 			
 		} catch (Exception e) {
@@ -102,8 +117,9 @@ public class Level {
 	
 	public void selectOften() {
 		System.out.println("책 읽는 빈도수를 입력하세요 (2주 단위) : ");
-		often = sc.nextInt();
+		often = Integer.parseInt(sc.nextLine());
 		
+		// 2주 단위에 맞춰서 책 읽는 빈도수에 따라 레벨이 달라지도록 함.
 		if (often > 0 && often < 15) {
 			if (often < 2) {
 				oLevel = 1;
@@ -127,6 +143,7 @@ public class Level {
 			System.out.println("잘못 입력하셨습니다.");
 		}
 		
+		// 나이와 빈도수 레벨을 합친 후 평균 종합 레벨을 구함
 		level = Math.round((aLevel + oLevel) / 2);
 		
 		System.out.println("\n종합레벨 : " + level + "\n");
@@ -143,16 +160,28 @@ public class Level {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
+
+			// rs에 더이상 값이 없으면 '업데이트 예정입니다.' 문구를 출력함.
+			boolean rsa = rs.next();
+			if (rsa == false) {
+				System.out.println("업데이트 예정입니다.\n");
+			}
 			
 			int bookNo1 = 0, pageNo1 = 0;
 			String title1 = null, author1 = null, country1 = null;
-			while (rs.next()) {
+
+			// rsa에 rs.next()를 넣어 위의 if문과 겹치지 않도록 함. 값 하나가 잘려서 나오지 않는 문제 해결!
+			while (rsa) {
 				bookNo1 = rs.getInt("bookNo");
 				title1 = rs.getString("title");
 				author1 = rs.getString("author");
 				country1 = rs.getString("country");
 				pageNo1 = rs.getInt("pageNo");
+				
 				System.out.println(bookNo1 + ". " + title1 + ",\n\t 작가 : " + author1 + ", 나라 : " + country1 + ", 페이지 수 : " + pageNo1);
+
+				// rsa에 rs.next()값을 넣어줘서 계속 갱신이 되도록 함.
+				rsa = rs.next();
 			}
 		} catch(Exception e) {
 			e.printStackTrace();

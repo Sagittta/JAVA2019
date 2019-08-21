@@ -26,14 +26,14 @@ public class Star {
 			conn = DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
 			
 			System.out.print("서비스에 만족도에 따라 별의 개수를 입력해주세요.(1~5) : ");
-			star = sc.nextInt();
+			star = Integer.parseInt(sc.nextLine());
 			if (star < 6 && star > 0) {
 				for (int i = 0; i < star; i++)
 					System.out.print("★");
 				System.out.println("");
 			} else {
 				System.out.println("1 ~ 5로 다시 입력해 주세요.");
-				star = sc.nextInt();
+				star = Integer.parseInt(sc.nextLine());
 				if (star < 6 && star > 0) {
 					for (int i = 0; i < star; i++)
 						System.out.print("★");
@@ -44,6 +44,7 @@ public class Star {
 				
 			if (star < 3) {
 				System.out.println("감사합니다.");
+				// 보완할 점 입력하는 함수 불러옴.
 				writeMore();
 			} else	System.out.println("감사합니다. 더 열심히 하겠습니다 !!");
 			
@@ -52,6 +53,7 @@ public class Star {
 			sql = "INSERT INTO star VALUES(?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			
+			// int형인 star를 String형 star1로 바꿔줌
 			String star1 = "" + star;
 			pstmt.setString(1, star1);
 			pstmt.setString(2, text);
@@ -62,6 +64,7 @@ public class Star {
 			rs = pstmt.executeQuery();
 			
 			System.out.println("\n★ 별점 평균 ★");
+			// 별점 평균을 내줌.
 			if (rs.next()) {
 				String avg = rs.getString("avg(count)");
 				System.out.println(avg.substring(0, 3) + "\n");
@@ -80,13 +83,13 @@ public class Star {
 	//보완할 점을 입력할 수 있도록 하는 함수.
 	public void writeMore() {
 		System.out.println("더 나은 프로그램을 위해 보완할 점을 입력해주세요. (입력 : 1, 종료 : 0)");
-		int a = sc.nextInt();
+		int a = Integer.parseInt(sc.nextLine());
 		switch (a) {
 		case 0 : 
 			System.out.println("감사합니다.");
 			break;
 		case 1 : 
-			text = sc.next();
+			text = sc.nextLine();
 			System.out.println("감사합니다. 열심히 보완하겠습니다.");
 			break;
 		default :

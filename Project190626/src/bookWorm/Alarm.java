@@ -28,12 +28,12 @@ public class Alarm {
 			conn = DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
 			
 			System.out.print("Hour : ");
-			time = sc.nextInt();
+			time = Integer.parseInt(sc.nextLine());
 			if (time > 0 && time < 25) {
 				setHour(time);
 			} else {
 				System.out.println("1 ~ 24로 다시 입력해주세요.");
-				time = sc.nextInt();
+				time = Integer.parseInt(sc.nextLine());
 				if (time > 0 && time < 25) {
 					setHour(time);
 				}
@@ -41,17 +41,18 @@ public class Alarm {
 			}
 			
 			System.out.print("Minute : ");
-			time = sc.nextInt();
+			time = Integer.parseInt(sc.nextLine());
 			if (time > -1 && time < 60)	{
 				setMinute(time);
 			} else {
 				System.out.println("0 ~ 59로 다시 입력해주세요.");
-				time = sc.nextInt();
+				time = Integer.parseInt(sc.nextLine());
 				if (time > 0 && time < 25) {
 					setMinute(time);
 				} else	System.out.println("프로그램이 종료됩니다.");
 			}
 			
+			// 입력한 시간과 분을 데이터베이스에 입력.
 			String sql;
 			sql = "INSERT INTO alarm VALUES(?, ?)";
 			pstmt = conn.prepareStatement(sql);
@@ -62,6 +63,7 @@ public class Alarm {
 			pstmt.setString(2, minute2);
 			pstmt.executeUpdate();
 			
+			// 알람 기록 보여주는 함수를 불러옴.
 			showAlarm();
 			
 		} catch (Exception e) {
@@ -73,6 +75,7 @@ public class Alarm {
 	//현재까지 기록된 알람 기록을 보여줌.
 	public void showAlarm() {
 		try {
+			//알람 데이터 베이스에 들어있는 시간과 분을 불러옴.
 			String sql = "SELECT hour, minute FROM alarm";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -80,6 +83,7 @@ public class Alarm {
 			System.out.print("\n알람 기록을 보여드릴까요? (1 : 네, 2 : 아니요) :");
 			int a = sc.nextInt();
 			if (a == 1) {
+				// rs 에 값이 있을 경우에 불러옴.
 				if (rs != null) {
 					while (rs.next()) {
 						String showHour = rs.getString("hour");
@@ -89,10 +93,11 @@ public class Alarm {
 					}
 				}
 				
+				// 닫아줌.
 				pstmt.close();
 				conn.close();
 				
-			} else 	System.out.println(toString());
+			} else 	System.out.println("\n" + toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Error Occurs.");
