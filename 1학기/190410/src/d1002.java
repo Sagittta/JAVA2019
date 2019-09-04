@@ -5,11 +5,11 @@ public class d1002 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int bt;
-		try {									//ÀÌ°Å ½ÇÇàÇØ ~
+		try {									//ì´ê±° ì‹¤í–‰í•´ ~
 			bt = System.in.read();
-			System.out.println(bt);				//int °ªÀ¸·Î Ãâ·Â(¾Æ½ºÅ°ÄÚµå)
-			System.out.println((char)bt);		//char °ªÀ¸·Î Ãâ·Â
-		} catch (IOException e) {				//ÀÌ·± ¿¡·¯°¡ ¹ß»ıÇßÀ» ¶§ ³Ê°¡ Àâ¾Æ¼­ ÇØ°áÇØ ~
+			System.out.println(bt);				//int ê°’ìœ¼ë¡œ ì¶œë ¥(ì•„ìŠ¤í‚¤ì½”ë“œ)
+			System.out.println((char)bt);		//char ê°’ìœ¼ë¡œ ì¶œë ¥
+		} catch (IOException e) {				//ì´ëŸ° ì—ëŸ¬ê°€ ë°œìƒí–ˆì„ ë•Œ ë„ˆê°€ ì¡ì•„ì„œ í•´ê²°í•´ ~
 			e.printStackTrace();
 		}
 	}

@@ -7,14 +7,14 @@ public class d0805 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String line;
-		String tmpStr = "hong ¿ë»ê±¸ 10.5 20.5";
+		String tmpStr = "hong ìš©ì‚°êµ¬ 10.5 20.5";
 		StringTokenizer parse = new StringTokenizer(tmpStr);
 		String name, address;
 		double math, english, total, avg;
 		name = parse.nextToken();
 		address = parse.nextToken();
-//		math = Double.valueOf(parse.nextToken()).doubleValue();		//String -> Double(°´Ã¼) -> double(±âº» ÀÚ·áÇü)
-		math = Double.parseDouble(parse.nextToken());		//String -> double(±âº» ÀÚ·áÇü)
+//		math = Double.valueOf(parse.nextToken()).doubleValue();		//String -> Double(ê°ì²´) -> double(ê¸°ë³¸ ìë£Œí˜•)
+		math = Double.parseDouble(parse.nextToken());		//String -> double(ê¸°ë³¸ ìë£Œí˜•)
 //		english = Double.valueOf(parse.nextToken()).doubleValue();
 		english = Double.parseDouble(parse.nextToken());
 		total = math + english;

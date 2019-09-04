@@ -16,7 +16,7 @@ public class Runnable1Exam {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("ÇÁ·Î±×·¥ ½ÃÀÛ");
+		System.out.println("í”„ë¡œê·¸ëž¨ ì‹œìž‘");
 		
 		Top2 t = new Top2();
 		Thread thd = new Thread(t);
@@ -24,9 +24,9 @@ public class Runnable1Exam {
 		Thread thd2 = new Thread(t);
 		thd2.start();
 		
-		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ");
 	}
 
 }
 
-//p165-5 ¸Å¿ì Áß¿äÇÔ ******
+//p165-5 ë§¤ìš° ì¤‘ìš”í•¨ ******

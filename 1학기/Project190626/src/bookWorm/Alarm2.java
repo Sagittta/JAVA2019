@@ -13,24 +13,24 @@ public class Alarm2 {
 		time = sc.nextInt();
 		if (time > 0 && time < 25)	setHour(time);
 		else {
-			System.out.println("1 ~ 24·Î ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			System.out.println("1 ~ 24ë¡œ ë‹¤ì‹œ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 			time = sc.nextInt();
 			if (time > 0 && time < 25)	setHour(time);
-			else	System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµË´Ï´Ù.");
+			else	System.out.println("í”„ë¡œê·¸ëž¨ì´ ì¢…ë£Œë©ë‹ˆë‹¤.");
 		}
 		System.out.print("Minute : ");
 		time = sc.nextInt();
 		if (time > -1 && time < 60)	setMinute(time);
 		else {
-			System.out.println("0 ~ 59·Î ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			System.out.println("0 ~ 59ë¡œ ë‹¤ì‹œ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 			time = sc.nextInt();
 			if (time > 0 && time < 25)	setMinute(time);
-			else	System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµË´Ï´Ù.");
+			else	System.out.println("í”„ë¡œê·¸ëž¨ì´ ì¢…ë£Œë©ë‹ˆë‹¤.");
 		}
 	}
 	
 	public String toString() {
-		return ("¾Ë¶÷ÀÌ " + getHour() + "½Ã " + getMinute() + "ºÐ¿¡ ¿ï¸³´Ï´Ù.");
+		return ("ì•ŒëžŒì´ " + getHour() + "ì‹œ " + getMinute() + "ë¶„ì— ìš¸ë¦½ë‹ˆë‹¤.");
 	}
 
 	public void setHour(int hour) {

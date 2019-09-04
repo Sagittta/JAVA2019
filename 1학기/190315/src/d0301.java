@@ -6,7 +6,7 @@ public class d0301 {
 		// TODO Auto-generated method stub
 //		int arr[] = new int[] {5, 7, 9, 1, 13};
 //		for (int a : arr) {
-//			System.out.println(a + "");			//""¸¦ ÀÌ¿ëÇÏ¸é ¼ıÀÚ¸¦ ¹®ÀÚ¿­·Î ¹Ù²Ü ¼ö ÀÖ´Ù.	
+//			System.out.println(a + "");			//""ë¥¼ ì´ìš©í•˜ë©´ ìˆ«ìë¥¼ ë¬¸ìì—´ë¡œ ë°”ê¿€ ìˆ˜ ìˆë‹¤.	
 //			int member = a;
 //			if (member == 5) {
 //				System.out.println("ITZY");
@@ -23,7 +23,7 @@ public class d0301 {
 //		
 //		System.out.println("====================");
 //		
-//		System.out.println("¸â¹ö ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+//		System.out.println("ë©¤ë²„ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		Scanner sc = new Scanner(System.in);
 //		int member = sc.nextInt();	
 //		if (member == 5) {
@@ -39,7 +39,7 @@ public class d0301 {
 //		}
 		
 //		while (true) {
-//			System.out.println("¸â¹ö ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+//			System.out.println("ë©¤ë²„ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 //			int m = sc.nextInt();	
 //			if (m == 5) {
 //				System.out.println("ITZY");
@@ -52,13 +52,13 @@ public class d0301 {
 //			} else if (m == 13) {
 //				System.out.println("SEVENTEEN");
 //			} else {
-//				System.out.println("Å»Ãâ!");
+//				System.out.println("íƒˆì¶œ!");
 //				break;
 //			}
 //		}
 		
 		for ( ; ; ) {
-			System.out.println("¸â¹ö ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+			System.out.println("ë©¤ë²„ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 			int m = sc.nextInt();	
 			if (m == 5) {
 				System.out.println("ITZY");
@@ -71,7 +71,7 @@ public class d0301 {
 			} else if (m == 13) {
 				System.out.println("SEVENTEEN");
 			} else {
-				System.out.println("Å»Ãâ!");
+				System.out.println("íƒˆì¶œ!");
 				break;
 			}
 		}

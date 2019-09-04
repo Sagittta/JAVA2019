@@ -8,8 +8,8 @@ public class d0801 {
 		StringBuffer sb2 = new StringBuffer(" Project");
 		StringBuffer str1 = null;
 		StringBuffer str2 = null;
-		str1 = sb1.append(" Project");			//sb1¿¡µµ ºÙ¾î¹ö¸²
-		str2 = sb1.append(sb2);					//sb2´Â ±×´ë·ÎÀÓ. sb1¿¡´Â ÇÁ·ÎÁ§Æ®°¡ ºÙ¾î¹ö¸²
+		str1 = sb1.append(" Project");			//sb1ì—ë„ ë¶™ì–´ë²„ë¦¼
+		str2 = sb1.append(sb2);					//sb2ëŠ” ê·¸ëŒ€ë¡œì„. sb1ì—ëŠ” í”„ë¡œì íŠ¸ê°€ ë¶™ì–´ë²„ë¦¼
 		System.out.println("sb1 = " + sb1);
 		System.out.println("sb2 = " + sb2);
 		System.out.println("str1 = " + str1);

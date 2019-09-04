@@ -5,11 +5,11 @@ public class d0702 {
 		if (n.substring(0, 1).equals("3")) {
 			String classroomStr = n.substring(1,2);
 			int classroom = Integer.parseInt(classroomStr)-1;
-			System.out.println(ÇÐ³â3[classroom]);
+			System.out.println(í•™ë…„3[classroom]);
 		} else {
 		String classroomStr = studentNumber.substring(1,2);
 		int classroom = Integer.parseInt(classroomStr)-1;
-		System.out.println(ÇÐ³â2[classroom]);
+		System.out.println(í•™ë…„2[classroom]);
 		}
 	}
 }

@@ -5,7 +5,7 @@ class Top3 implements Runnable {
 	@Override
 	public void run() {
 		for (int i = 0; i < 30; i++) {
-			//½º·¹µå.Áö±Ý½º·¹µå.ÀÌ¸§°¡Á®¿À±â(Áö±Ý ¾î¶² ½º·¹µå ¾²°í ÀÖ´ÂÁö.ÀÌ¸§°¡Á®¿À±â)
+			//ìŠ¤ë ˆë“œ.ì§€ê¸ˆìŠ¤ë ˆë“œ.ì´ë¦„ê°€ì ¸ì˜¤ê¸°(ì§€ê¸ˆ ì–´ë–¤ ìŠ¤ë ˆë“œ ì“°ê³  ìžˆëŠ”ì§€.ì´ë¦„ê°€ì ¸ì˜¤ê¸°)
 			System.out.print((Thread.currentThread()).getName() + i + "\t");
 		}
 	}
@@ -15,19 +15,19 @@ class Top3 implements Runnable {
 public class Runnable3Exam {
 
 	public static void main(String[] args) {
-		System.out.println("ÇÁ·Î±×·¥ ½ÃÀÛ");
+		System.out.println("í”„ë¡œê·¸ëž¨ ì‹œìž‘");
 		
 		Top3 t = new Top3();
-		Thread thd1 = new Thread(t, "a");	//(Runnable °´Ã¼, "ÀÌ¸§")
+		Thread thd1 = new Thread(t, "a");	//(Runnable ê°ì²´, "ì´ë¦„")
 		Thread thd2 = new Thread(t, "b");
-		thd1.setPriority(Thread.MAX_PRIORITY);	//¿ì¼±¼øÀ§ ÃÖ°í·Î ÁÜ.(10) ¿ì¼± ½ÇÇàµÉ È®·üÀÌ ³ôÀ» »Ó Àý´ëÀûÀÌÁø ¾ÊÀ½.¤¤
-		thd2.setPriority(Thread.MIN_PRIORITY);	//ÃÖÇÏ ¿ì¼±¼øÀ§.(1) ¹Ýµå½Ã ±×·± °Í¸¸Àº ¾Æ´Ô.
+		thd1.setPriority(Thread.MAX_PRIORITY);	//ìš°ì„ ìˆœìœ„ ìµœê³ ë¡œ ì¤Œ.(10) ìš°ì„  ì‹¤í–‰ë  í™•ë¥ ì´ ë†’ì„ ë¿ ì ˆëŒ€ì ì´ì§„ ì•ŠìŒ.ã„´
+		thd2.setPriority(Thread.MIN_PRIORITY);	//ìµœí•˜ ìš°ì„ ìˆœìœ„.(1) ë°˜ë“œì‹œ ê·¸ëŸ° ê²ƒë§Œì€ ì•„ë‹˜.
 		thd1.start();
 		thd2.start();
-		System.out.println(thd1.getPriority());		//¿ì¼±¼øÀ§ : 5
-		System.out.println(thd2.getPriority());		//¿ì¼±¼øÀ§ : 5
+		System.out.println(thd1.getPriority());		//ìš°ì„ ìˆœìœ„ : 5
+		System.out.println(thd2.getPriority());		//ìš°ì„ ìˆœìœ„ : 5
 		
-		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ");
 	}
 
 }

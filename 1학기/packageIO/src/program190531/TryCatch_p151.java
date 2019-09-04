@@ -5,16 +5,16 @@ public class TryCatch_p151 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String[] irum = new String[3];
-		irum[0] = "ÀÌÃ¤¸°";
-		irum[1] = "¿øÃ¤¸°";
-		irum[2] = "Àå¿øÀÌ";
+		irum[0] = "ì´ì±„ë¦°";
+		irum[1] = "ì›ì±„ë¦°";
+		irum[2] = "ì¥ì›ì´";
 		
 		try {
 			for (int i = 0; i <= irum.length; i++) {
 				System.out.println(irum[i]);
 			}			
 		} catch(ArrayIndexOutOfBoundsException e) {
-			System.out.println("¿¹¿Ü ¹ß»ı");
+			System.out.println("ì˜ˆì™¸ ë°œìƒ");
 		}
 	}
 

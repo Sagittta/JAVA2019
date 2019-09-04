@@ -19,7 +19,7 @@ public class Alarm {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	//¾Ë¶÷ ½Ã°£ ¼³Á¤ÇÏ´Â ÇÔ¼ö. ¿Ã¹Ù¸£Áö ¾ÊÀº ½Ã°£ ÀÔ·Â ½Ã ÇÑ ¹ø ´õ ÀÔ·ÂÇÒ ¼ö ÀÖµµ·Ï ÇÔ.
+	//ì•ŒëžŒ ì‹œê°„ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜. ì˜¬ë°”ë¥´ì§€ ì•Šì€ ì‹œê°„ ìž…ë ¥ ì‹œ í•œ ë²ˆ ë” ìž…ë ¥í•  ìˆ˜ ìžˆë„ë¡ í•¨.
 	public void setAlarm() {
 		
 		try {
@@ -32,12 +32,12 @@ public class Alarm {
 			if (time > 0 && time < 25) {
 				setHour(time);
 			} else {
-				System.out.println("1 ~ 24·Î ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+				System.out.println("1 ~ 24ë¡œ ë‹¤ì‹œ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 				time = Integer.parseInt(sc.nextLine());
 				if (time > 0 && time < 25) {
 					setHour(time);
 				}
-				else	System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµË´Ï´Ù.");
+				else	System.out.println("í”„ë¡œê·¸ëž¨ì´ ì¢…ë£Œë©ë‹ˆë‹¤.");
 			}
 			
 			System.out.print("Minute : ");
@@ -45,14 +45,14 @@ public class Alarm {
 			if (time > -1 && time < 60)	{
 				setMinute(time);
 			} else {
-				System.out.println("0 ~ 59·Î ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+				System.out.println("0 ~ 59ë¡œ ë‹¤ì‹œ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 				time = Integer.parseInt(sc.nextLine());
 				if (time > 0 && time < 25) {
 					setMinute(time);
-				} else	System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµË´Ï´Ù.");
+				} else	System.out.println("í”„ë¡œê·¸ëž¨ì´ ì¢…ë£Œë©ë‹ˆë‹¤.");
 			}
 			
-			// ÀÔ·ÂÇÑ ½Ã°£°ú ºÐÀ» µ¥ÀÌÅÍº£ÀÌ½º¿¡ ÀÔ·Â.
+			// ìž…ë ¥í•œ ì‹œê°„ê³¼ ë¶„ì„ ë°ì´í„°ë² ì´ìŠ¤ì— ìž…ë ¥.
 			String sql;
 			sql = "INSERT INTO alarm VALUES(?, ?)";
 			pstmt = conn.prepareStatement(sql);
@@ -63,7 +63,7 @@ public class Alarm {
 			pstmt.setString(2, minute2);
 			pstmt.executeUpdate();
 			
-			// ¾Ë¶÷ ±â·Ï º¸¿©ÁÖ´Â ÇÔ¼ö¸¦ ºÒ·¯¿È.
+			// ì•ŒëžŒ ê¸°ë¡ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜ë¥¼ ë¶ˆëŸ¬ì˜´.
 			showAlarm();
 			
 		} catch (Exception e) {
@@ -72,28 +72,28 @@ public class Alarm {
 		}
 	}
 	
-	//ÇöÀç±îÁö ±â·ÏµÈ ¾Ë¶÷ ±â·ÏÀ» º¸¿©ÁÜ.
+	//í˜„ìž¬ê¹Œì§€ ê¸°ë¡ëœ ì•ŒëžŒ ê¸°ë¡ì„ ë³´ì—¬ì¤Œ.
 	public void showAlarm() {
 		try {
-			//¾Ë¶÷ µ¥ÀÌÅÍ º£ÀÌ½º¿¡ µé¾îÀÖ´Â ½Ã°£°ú ºÐÀ» ºÒ·¯¿È.
+			//ì•ŒëžŒ ë°ì´í„° ë² ì´ìŠ¤ì— ë“¤ì–´ìžˆëŠ” ì‹œê°„ê³¼ ë¶„ì„ ë¶ˆëŸ¬ì˜´.
 			String sql = "SELECT hour, minute FROM alarm";
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
-			System.out.print("\n¾Ë¶÷ ±â·ÏÀ» º¸¿©µå¸±±î¿ä? (1 : ³×, 2 : ¾Æ´Ï¿ä) :");
+			System.out.print("\nì•ŒëžŒ ê¸°ë¡ì„ ë³´ì—¬ë“œë¦´ê¹Œìš”? (1 : ë„¤, 2 : ì•„ë‹ˆìš”) :");
 			int a = sc.nextInt();
 			if (a == 1) {
-				// rs ¿¡ °ªÀÌ ÀÖÀ» °æ¿ì¿¡ ºÒ·¯¿È.
+				// rs ì— ê°’ì´ ìžˆì„ ê²½ìš°ì— ë¶ˆëŸ¬ì˜´.
 				if (rs != null) {
 					while (rs.next()) {
 						String showHour = rs.getString("hour");
 						String showMinute = rs.getString("minute");
-						String showText = showHour + "½Ã " + showMinute + "ºÐ¿¡ ¾Ë¶÷ÀÌ ÀÖ½À´Ï´Ù.";
+						String showText = showHour + "ì‹œ " + showMinute + "ë¶„ì— ì•ŒëžŒì´ ìžˆìŠµë‹ˆë‹¤.";
 						System.out.println(showText);
 					}
 				}
 				
-				// ´Ý¾ÆÁÜ.
+				// ë‹«ì•„ì¤Œ.
 				pstmt.close();
 				conn.close();
 				
@@ -104,12 +104,12 @@ public class Alarm {
 		}
 	}
 	
-	//¾Ë¶÷ÀÌ ¿ï¸± ½Ã°£À» ¹®ÀÚ¿­·Î Ãâ·ÂÇÔ.
+	//ì•ŒëžŒì´ ìš¸ë¦´ ì‹œê°„ì„ ë¬¸ìžì—´ë¡œ ì¶œë ¥í•¨.
 	public String toString() {
-		return ("¾Ë¶÷ÀÌ " + getHour() + "½Ã " + getMinute() + "ºÐ¿¡ ¿ï¸³´Ï´Ù.");
+		return ("ì•ŒëžŒì´ " + getHour() + "ì‹œ " + getMinute() + "ë¶„ì— ìš¸ë¦½ë‹ˆë‹¤.");
 	}
 
-	// ½Ã°£°ú ºÐÀ» ¼³Á¤ÇÒ ¶§ »ç¿ëÇÏ´Â setter¿Í getter ÇÔ¼ö
+	// ì‹œê°„ê³¼ ë¶„ì„ ì„¤ì •í•  ë•Œ ì‚¬ìš©í•˜ëŠ” setterì™€ getter í•¨ìˆ˜
 	public void setHour(int hour) {
 		this.hour = hour;
 	}

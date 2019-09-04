@@ -3,40 +3,40 @@ public class d0601 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String str1 = "mirim";				//°ªÀÌ ¹Ù²îÁö ¾ÊÀ½
+		String str1 = "mirim";				//ê°’ì´ ë°”ë€Œì§€ ì•ŠìŒ
 		String str2 = "mirim";
 		String str3 = new String("mirim");		
 		String str4 = new String("mirim");		
 		
 		if (str1 == str2) {
-			System.out.println("ÁÖ¼Ò °°´Ù");
+			System.out.println("ì£¼ì†Œ ê°™ë‹¤");
 		} else {
-			System.out.println("ÁÖ¼Ò ´Ù¸£´Ù");
+			System.out.println("ì£¼ì†Œ ë‹¤ë¥´ë‹¤");
 		}
 		
 		if (str3 == str4) {
-			System.out.println("ÁÖ¼Ò °°´Ù");
+			System.out.println("ì£¼ì†Œ ê°™ë‹¤");
 		} else {
-			System.out.println("ÁÖ¼Ò ´Ù¸£´Ù");
+			System.out.println("ì£¼ì†Œ ë‹¤ë¥´ë‹¤");
 		}
 		
 		if (str1.equals(str2)) {
-			System.out.println("³»¿ë °°´Ù");
+			System.out.println("ë‚´ìš© ê°™ë‹¤");
 		} else {
-			System.out.println("³»¿ë ´Ù¸£´Ù");
+			System.out.println("ë‚´ìš© ë‹¤ë¥´ë‹¤");
 		}
 		
 		if (str3.equals(str4)) {
-			System.out.println("³»¿ë °°´Ù");
+			System.out.println("ë‚´ìš© ê°™ë‹¤");
 		} else {
-			System.out.println("³»¿ë ´Ù¸£´Ù");
+			System.out.println("ë‚´ìš© ë‹¤ë¥´ë‹¤");
 		}
 		
 		System.out.println("==============");
 		System.out.println(str1.length());
-		System.out.println(str1.charAt(2));			//index 2/ rÃâ·Â
-		System.out.println(String.valueOf(123));		//123ÀÌ¶ó´Â Á¤¼ö¸¦ StringÀ¸·Î
-		System.out.println("  Happy Programming! ".trim());				//°ø¹é ¾ø¾Ú		//strip(Python)
+		System.out.println(str1.charAt(2));			//index 2/ rì¶œë ¥
+		System.out.println(String.valueOf(123));		//123ì´ë¼ëŠ” ì •ìˆ˜ë¥¼ Stringìœ¼ë¡œ
+		System.out.println("  Happy Programming! ".trim());				//ê³µë°± ì—†ì•°		//strip(Python)
 		System.out.println("2417".substring(2, 4));			//2<= n <4		//slicing(Python)
 		System.out.println("2417".substring(1, 2));
 		System.out.println("2417".charAt(1));

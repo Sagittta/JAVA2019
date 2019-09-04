@@ -15,13 +15,13 @@ public class Thread1Exam {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("ÇÁ·Î±×·¥ ½ÃÀÛ");
+		System.out.println("í”„ë¡œê·¸ëž¨ ì‹œìž‘");
 		
 		Top d = new Top();
 		Top d2 = new Top();
 		d.start();
 		d2.start();
-		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ");
 	}
 
 }

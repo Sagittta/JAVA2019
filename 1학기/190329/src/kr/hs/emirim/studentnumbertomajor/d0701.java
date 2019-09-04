@@ -5,42 +5,42 @@ public class d0701 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("ÇĞ¹øÀ» ÀÔ·Â¹ŞÀÚ");
+		System.out.println("í•™ë²ˆì„ ì…ë ¥ë°›ì");
 		Scanner sc = new Scanner(System.in);
 		String num = sc.next();
 		if (num.charAt(0)=='1') {
 			if (num.charAt(1) == '1' || num.charAt(1) == '2') {
-				System.out.println("1ÇĞ³â ´º¹Ìµğ¾î¼ÒÇÁÆ®¿ş¾î°ú");
+				System.out.println("1í•™ë…„ ë‰´ë¯¸ë””ì–´ì†Œí”„íŠ¸ì›¨ì–´ê³¼");
 			} else if (num.charAt(1) == '3' || num.charAt(1) == '4') {
-				System.out.println("1ÇĞ³â ´º¹Ìµğ¾îÀ¥¼Ö·ç¼Ç°ú");
+				System.out.println("1í•™ë…„ ë‰´ë¯¸ë””ì–´ì›¹ì†”ë£¨ì…˜ê³¼");
 			} else if (num.charAt(1) == '5' || num.charAt(1) == '6') {
-				System.out.println("1ÇĞ³â ´º¹Ìµğ¾îµğÀÚÀÎ°ú");
+				System.out.println("1í•™ë…„ ë‰´ë¯¸ë””ì–´ë””ìì¸ê³¼");
 			} else {
-				System.out.println("¿À·ù³².");
+				System.out.println("ì˜¤ë¥˜ë‚¨.");
 			}
 		}
 		else if (num.charAt(0) == '2') {
 			if (num.charAt(1) == '1' || num.charAt(1) == '2') {
-				System.out.println("2ÇĞ³â ´º¹Ìµğ¾î¼ÒÇÁÆ®¿ş¾î°ú");
+				System.out.println("2í•™ë…„ ë‰´ë¯¸ë””ì–´ì†Œí”„íŠ¸ì›¨ì–´ê³¼");
 			} else if (num.charAt(1) == '3' || num.charAt(1) == '4') {
-				System.out.println("2ÇĞ³â ´º¹Ìµğ¾îÀ¥¼Ö·ç¼Ç°ú");
+				System.out.println("2í•™ë…„ ë‰´ë¯¸ë””ì–´ì›¹ì†”ë£¨ì…˜ê³¼");
 			} else if (num.charAt(1) == '5' || num.charAt(1) == '6') {
-				System.out.println("2ÇĞ³â ´º¹Ìµğ¾îµğÀÚÀÎ°ú");
+				System.out.println("2í•™ë…„ ë‰´ë¯¸ë””ì–´ë””ìì¸ê³¼");
 			} else {
-				System.out.println("¿À·ù³².");
+				System.out.println("ì˜¤ë¥˜ë‚¨.");
 			}
 		} else if (num.charAt(0) == '3') {
 			if (num.charAt(1) == '1' || num.charAt(1) == '2') {
-				System.out.println("3ÇĞ³â  ÀÎÅÍ·¢Æ¼ºê¹Ìµğ¾î°ú");
+				System.out.println("3í•™ë…„  ì¸í„°ë™í‹°ë¸Œë¯¸ë””ì–´ê³¼");
 			} else if (num.charAt(1) == '3' || num.charAt(1) == '4') {
-				System.out.println("3ÇĞ³â ´º¹Ìµğ¾îµğÀÚÀÎ°ú");
+				System.out.println("3í•™ë…„ ë‰´ë¯¸ë””ì–´ë””ìì¸ê³¼");
 			} else if (num.charAt(1) == '5' || num.charAt(1) == '6') {
-				System.out.println("3ÇĞ³â ´º¹Ìµğ¾îÀ¥¼Ö·ç¼Ç°ú");
+				System.out.println("3í•™ë…„ ë‰´ë¯¸ë””ì–´ì›¹ì†”ë£¨ì…˜ê³¼");
 			} else {
-				System.out.println("¿À·ù³².");
+				System.out.println("ì˜¤ë¥˜ë‚¨.");
 			}
 		} else
-			System.out.println("¿À·ù³².");
+			System.out.println("ì˜¤ë¥˜ë‚¨.");
 	}
 
 }

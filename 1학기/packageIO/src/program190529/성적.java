@@ -1,10 +1,10 @@
 package program190529;
 
-public class 己利 {
-	/*	捞抚
-	 * 	林家
-	 * 荐切
-	 * 康绢
+public class 靹膘爜 {
+	/*	鞚措
+	 * 	欤检唽
+	 * 靾橅暀
+	 * 鞓侅柎
 	 * getTotal()
 	 * getAverage()
 	 */
@@ -49,7 +49,7 @@ public class 己利 {
 	
 	@Override
 	public String toString() {
-		return "己利 [name=" + name + ", address=" + address + ", math=" + math + ", english=" + english
+		return "靹膘爜 [name=" + name + ", address=" + address + ", math=" + math + ", english=" + english
 				+ ", total=" + getTotal() + ", average=" + getAverage() + "]";
 	}
 }

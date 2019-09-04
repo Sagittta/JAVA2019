@@ -18,24 +18,24 @@ public class Taste {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	// ÃëÇâÀ» ¼³Á¤ÇÏ´Â ÇÔ¼ö.
+	// ì·¨í–¥ì„ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜.
 	public void selecTaste() {
 		try {
 			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
 			
-			// Àå¸£ ¼³Á¤ÇÏ´Â ÇÔ¼ö¸¦ ºÒ·¯¿È.
+			// ì¥ë¥´ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜ë¥¼ ë¶ˆëŸ¬ì˜´.
 			selectGenre();
 			
-			System.out.println("\n±¹°¡¸¦ ÀÔ·ÂÇÏ½Ã°Ú½À´Ï±î? (1: Yes, 2: No)");
+			System.out.println("\nêµ­ê°€ë¥¼ ì…ë ¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (1: Yes, 2: No)");
 			c = Integer.parseInt(sc.nextLine());
 			switch (c) {
-			// ±¹°¡ ¼³Á¤ÇÏ´Â ÇÔ¼ö¸¦ ºÒ·¯¿È.
+			// êµ­ê°€ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜ë¥¼ ë¶ˆëŸ¬ì˜´.
 				case 1: selectCountry();
 				break;
-				case 2: System.out.println("¾Ë°Ú½À´Ï´Ù.");
+				case 2: System.out.println("ì•Œê² ìŠµë‹ˆë‹¤.");
 				break;
-				default: System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				default: System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 				break;
 			}
 			
@@ -45,31 +45,31 @@ public class Taste {
 		}
 	}
 
-	// Àå¸£¸¦ ¼³Á¤ÇÏ´Â ÇÔ¼ö
+	// ì¥ë¥´ë¥¼ ì„¤ì •í•˜ëŠ” í•¨ìˆ˜
 	public void selectGenre() {
 		try {
-			System.out.println("Àå¸£ : ¹®ÇĞ(1), ÀåÆí¼Ò¼³(2), ½É¸®ÇĞ(3), ÆÇÅ¸Áö(4), °øÇĞ(5), Çö´ë¹®ÇĞ(6)");
+			System.out.println("ì¥ë¥´ : ë¬¸í•™(1), ì¥í¸ì†Œì„¤(2), ì‹¬ë¦¬í•™(3), íŒíƒ€ì§€(4), ê³µí•™(5), í˜„ëŒ€ë¬¸í•™(6)");
 			genre = Integer.parseInt(sc.nextLine());
 			
 			if (genre >0 && genre <7) {
 				switch (genre) {
-					case 1:	rGenre = "¹®ÇĞ";
+					case 1:	rGenre = "ë¬¸í•™";
 					break;
-					case 2: rGenre = "ÀåÆí¼Ò¼³";
+					case 2: rGenre = "ì¥í¸ì†Œì„¤";
 					break;
-					case 3: rGenre = "½É¸®ÇĞ";
+					case 3: rGenre = "ì‹¬ë¦¬í•™";
 					break;
-					case 4: rGenre = "ÆÇÅ¸Áö";
+					case 4: rGenre = "íŒíƒ€ì§€";
 					break;
-					case 5: rGenre = "°øÇĞ";
+					case 5: rGenre = "ê³µí•™";
 					break;
-					case 6: rGenre = "Çö´ë¹®ÇĞ";
+					case 6: rGenre = "í˜„ëŒ€ë¬¸í•™";
 					break;
-					default: rGenre = "¹®ÇĞ";
+					default: rGenre = "ë¬¸í•™";
 					break;
 				}
 			} else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 			
 			StringBuilder sb = new StringBuilder();
@@ -87,15 +87,15 @@ public class Taste {
 			int bookNo1 = 0, pageNo1 = 0;
 			String title1 = null, author1 = null, country1 = null;
 			
-			// rs¿¡ ´õÀÌ»ó °ªÀÌ ¾øÀ¸¸é '¾÷µ¥ÀÌÆ® ¿¹Á¤ÀÔ´Ï´Ù.' ¹®±¸¸¦ Ãâ·ÂÇÔ. °¨»çÇÕ´Ï´ç ~!!!
+			// rsì— ë”ì´ìƒ ê°’ì´ ì—†ìœ¼ë©´ 'ì—…ë°ì´íŠ¸ ì˜ˆì •ì…ë‹ˆë‹¤.' ë¬¸êµ¬ë¥¼ ì¶œë ¥í•¨. ê°ì‚¬í•©ë‹ˆë‹¹ ~!!!
 			boolean rsa = rs.next();
 			if (rsa == false) {
-				System.out.println("¾÷µ¥ÀÌÆ® ¿¹Á¤ÀÔ´Ï´Ù.\n");
+				System.out.println("ì—…ë°ì´íŠ¸ ì˜ˆì •ì…ë‹ˆë‹¤.\n");
 			}
 			
-			System.out.println("\n[Ã¥ ¸®½ºÆ®]\n");
+			System.out.println("\n[ì±… ë¦¬ìŠ¤íŠ¸]\n");
 			
-			// rsa¿¡ rs.next()¸¦ ³Ö¾î À§ÀÇ if¹®°ú °ãÄ¡Áö ¾Êµµ·Ï ÇÔ. °ª ÇÏ³ª°¡ Àß·Á¼­ ³ª¿ÀÁö ¾Ê´Â ¹®Á¦ ÇØ°á! ¼±»ı´ÔÀº ÃµÀç¼¼¿ä..
+			// rsaì— rs.next()ë¥¼ ë„£ì–´ ìœ„ì˜ ifë¬¸ê³¼ ê²¹ì¹˜ì§€ ì•Šë„ë¡ í•¨. ê°’ í•˜ë‚˜ê°€ ì˜ë ¤ì„œ ë‚˜ì˜¤ì§€ ì•ŠëŠ” ë¬¸ì œ í•´ê²°! ì„ ìƒë‹˜ì€ ì²œì¬ì„¸ìš”..
 			while (rsa) {
 				bookNo1 = rs.getInt("bookNo");
 				title1 = rs.getString("title");
@@ -103,9 +103,9 @@ public class Taste {
 				country1 = rs.getString("country");
 				pageNo1 = rs.getInt("pageNo");
 				
-				System.out.println(bookNo1 + ". " + title1 + ",\n\t ÀÛ°¡ : " + author1 + ", ³ª¶ó : " + country1 + ", ÆäÀÌÁö ¼ö : " + pageNo1 + "\n");
+				System.out.println(bookNo1 + ". " + title1 + ",\n\t ì‘ê°€ : " + author1 + ", ë‚˜ë¼ : " + country1 + ", í˜ì´ì§€ ìˆ˜ : " + pageNo1 + "\n");
 
-				// rsa¿¡ rs.next()°ªÀ» ³Ö¾îÁà¼­ °è¼Ó °»½ÅÀÌ µÇµµ·Ï ÇÔ.
+				// rsaì— rs.next()ê°’ì„ ë„£ì–´ì¤˜ì„œ ê³„ì† ê°±ì‹ ì´ ë˜ë„ë¡ í•¨.
 				rsa = rs.next();
 			}
 			
@@ -115,33 +115,33 @@ public class Taste {
 		}
 	}
 	
-	// ±¹°¡¸¦ ¼±ÅÃÇÏ´Â ÇÔ¼ö
+	// êµ­ê°€ë¥¼ ì„ íƒí•˜ëŠ” í•¨ìˆ˜
 	public void selectCountry() {
 		try {
 
-			System.out.println("\n±¹°¡ : ÇÑ±¹(1), ÇÁ¶û½º(2), ¹Ì±¹(3), È£ÁÖ(4), ÀÏº»(5)");
+			System.out.println("\nêµ­ê°€ : í•œêµ­(1), í”„ë‘ìŠ¤(2), ë¯¸êµ­(3), í˜¸ì£¼(4), ì¼ë³¸(5)");
 			country = Integer.parseInt(sc.nextLine());
 			
 			if (country >0 && country <6) {
 				switch (country) {
-					case 1:	rCountry = "ÇÑ±¹";
+					case 1:	rCountry = "í•œêµ­";
 					break;
-					case 2: rCountry = "ÇÁ¶û½º";
+					case 2: rCountry = "í”„ë‘ìŠ¤";
 					break;
-					case 3: rCountry = "¹Ì±¹";
+					case 3: rCountry = "ë¯¸êµ­";
 					break;
-					case 4: rCountry = "È£ÁÖ";
+					case 4: rCountry = "í˜¸ì£¼";
 					break;
-					case 5: rCountry = "ÀÏº»";
+					case 5: rCountry = "ì¼ë³¸";
 					break;
-					default: rCountry = "ÇÑ±¹";
+					default: rCountry = "í•œêµ­";
 					break;
 				}
 			} else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 
-			// À§ÀÇ ÇÔ¼ö¿¡¼­ ¼±ÅÃÇÑ Àå¸£¿Í ÀÌ ÇÔ¼ö¿¡¼­ ¼±ÅÃÇÑ ±¹°¡°¡ °ãÄ¡´Â Ã¥¸¸ Ãâ·ÂÇÔ.
+			// ìœ„ì˜ í•¨ìˆ˜ì—ì„œ ì„ íƒí•œ ì¥ë¥´ì™€ ì´ í•¨ìˆ˜ì—ì„œ ì„ íƒí•œ êµ­ê°€ê°€ ê²¹ì¹˜ëŠ” ì±…ë§Œ ì¶œë ¥í•¨.
 			StringBuilder sb = new StringBuilder();
 			sql = sb.append("SELECT * FROM booklist WHERE")
 					.append(" country = '")
@@ -159,13 +159,13 @@ public class Taste {
 			int bookNo1 = 0, pageNo1 = 0;
 			String title1 = null, author1 = null, genre1 = null;
 			
-			// rs¿¡ ´õÀÌ»ó °ªÀÌ ¾øÀ¸¸é '¾÷µ¥ÀÌÆ® ¿¹Á¤ÀÔ´Ï´Ù.' ¹®±¸¸¦ Ãâ·ÂÇÔ.
+			// rsì— ë”ì´ìƒ ê°’ì´ ì—†ìœ¼ë©´ 'ì—…ë°ì´íŠ¸ ì˜ˆì •ì…ë‹ˆë‹¤.' ë¬¸êµ¬ë¥¼ ì¶œë ¥í•¨.
 			boolean rsa = rs.next();
 			if (rsa == false) {
-				System.out.println("¾÷µ¥ÀÌÆ® ¿¹Á¤ÀÔ´Ï´Ù.\n");
+				System.out.println("ì—…ë°ì´íŠ¸ ì˜ˆì •ì…ë‹ˆë‹¤.\n");
 			}
 			
-			// rsa¿¡ rs.next()¸¦ ³Ö¾î À§ÀÇ if¹®°ú °ãÄ¡Áö ¾Êµµ·Ï ÇÔ. °ª ÇÏ³ª°¡ Àß·Á¼­ ³ª¿ÀÁö ¾Ê´Â ¹®Á¦ ÇØ°á!
+			// rsaì— rs.next()ë¥¼ ë„£ì–´ ìœ„ì˜ ifë¬¸ê³¼ ê²¹ì¹˜ì§€ ì•Šë„ë¡ í•¨. ê°’ í•˜ë‚˜ê°€ ì˜ë ¤ì„œ ë‚˜ì˜¤ì§€ ì•ŠëŠ” ë¬¸ì œ í•´ê²°!
 			while (rsa) {
 				bookNo1 = rs.getInt("bookNo");
 				title1 = rs.getString("title");
@@ -173,9 +173,9 @@ public class Taste {
 				genre1 = rs.getString("genre");
 				pageNo1 = rs.getInt("pageNo");
 				
-				System.out.println(bookNo1 + ". " + title1 + ",\n\t ÀÛ°¡ : " + author1 + ", Àå¸£ : " + genre1 + ", ÆäÀÌÁö ¼ö : " + pageNo1 + "\n");
+				System.out.println(bookNo1 + ". " + title1 + ",\n\t ì‘ê°€ : " + author1 + ", ì¥ë¥´ : " + genre1 + ", í˜ì´ì§€ ìˆ˜ : " + pageNo1 + "\n");
 				
-				// rsa¿¡ rs.next()°ªÀ» ³Ö¾îÁà¼­ °è¼Ó °»½ÅÀÌ µÇµµ·Ï ÇÔ.
+				// rsaì— rs.next()ê°’ì„ ë„£ì–´ì¤˜ì„œ ê³„ì† ê°±ì‹ ì´ ë˜ë„ë¡ í•¨.
 				rsa = rs.next();
 			}
 			

@@ -14,7 +14,7 @@ public class Star {
 	int star;
 	String text;
 	
-	//º°Á¡ ÁÖ´Â ÇÔ¼ö. µ¥ÀÌÅÍº£ÀÌ½º¿¡ º°Á¡ ÁÖ´Â °³¼ö¸¦ Áı¾î³Ö°í, Æò±ÕÀ» ±¸ÇÒ ¼ö ÀÖµµ·Ï ÇÔ.
+	//ë³„ì  ì£¼ëŠ” í•¨ìˆ˜. ë°ì´í„°ë² ì´ìŠ¤ì— ë³„ì  ì£¼ëŠ” ê°œìˆ˜ë¥¼ ì§‘ì–´ë„£ê³ , í‰ê· ì„ êµ¬í•  ìˆ˜ ìˆë„ë¡ í•¨.
 	public void giveStar() {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -25,35 +25,35 @@ public class Star {
 			Class.forName(JDBC_DRIVER);
 			conn = DriverManager.getConnection(DB_URL, USER_NAME, PASSWORD);
 			
-			System.out.print("¼­ºñ½º¿¡ ¸¸Á·µµ¿¡ µû¶ó º°ÀÇ °³¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.(1~5) : ");
+			System.out.print("ì„œë¹„ìŠ¤ì— ë§Œì¡±ë„ì— ë”°ë¼ ë³„ì˜ ê°œìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.(1~5) : ");
 			star = Integer.parseInt(sc.nextLine());
 			if (star < 6 && star > 0) {
 				for (int i = 0; i < star; i++)
-					System.out.print("¡Ú");
+					System.out.print("â˜…");
 				System.out.println("");
 			} else {
-				System.out.println("1 ~ 5·Î ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
+				System.out.println("1 ~ 5ë¡œ ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
 				star = Integer.parseInt(sc.nextLine());
 				if (star < 6 && star > 0) {
 					for (int i = 0; i < star; i++)
-						System.out.print("¡Ú");
+						System.out.print("â˜…");
 					System.out.println("");
 				}
-				else	System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµË´Ï´Ù. ´Ù½Ã ½ÇÇàÇØÁÖ¼¼¿ä.");
+				else	System.out.println("í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë©ë‹ˆë‹¤. ë‹¤ì‹œ ì‹¤í–‰í•´ì£¼ì„¸ìš”.");
 			}
 				
 			if (star < 3) {
-				System.out.println("°¨»çÇÕ´Ï´Ù.");
-				// º¸¿ÏÇÒ Á¡ ÀÔ·ÂÇÏ´Â ÇÔ¼ö ºÒ·¯¿È.
+				System.out.println("ê°ì‚¬í•©ë‹ˆë‹¤.");
+				// ë³´ì™„í•  ì  ì…ë ¥í•˜ëŠ” í•¨ìˆ˜ ë¶ˆëŸ¬ì˜´.
 				writeMore();
-			} else	System.out.println("°¨»çÇÕ´Ï´Ù. ´õ ¿­½ÉÈ÷ ÇÏ°Ú½À´Ï´Ù !!");
+			} else	System.out.println("ê°ì‚¬í•©ë‹ˆë‹¤. ë” ì—´ì‹¬íˆ í•˜ê² ìŠµë‹ˆë‹¤ !!");
 			
 			
 			String sql;
 			sql = "INSERT INTO star VALUES(?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			
-			// intÇüÀÎ star¸¦ StringÇü star1·Î ¹Ù²ãÁÜ
+			// intí˜•ì¸ starë¥¼ Stringí˜• star1ë¡œ ë°”ê¿”ì¤Œ
 			String star1 = "" + star;
 			pstmt.setString(1, star1);
 			pstmt.setString(2, text);
@@ -63,8 +63,8 @@ public class Star {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
-			System.out.println("\n¡Ú º°Á¡ Æò±Õ ¡Ú");
-			// º°Á¡ Æò±ÕÀ» ³»ÁÜ.
+			System.out.println("\nâ˜… ë³„ì  í‰ê·  â˜…");
+			// ë³„ì  í‰ê· ì„ ë‚´ì¤Œ.
 			if (rs.next()) {
 				String avg = rs.getString("avg(count)");
 				System.out.println(avg.substring(0, 3) + "\n");
@@ -80,20 +80,20 @@ public class Star {
 		
 	}
 	
-	//º¸¿ÏÇÒ Á¡À» ÀÔ·ÂÇÒ ¼ö ÀÖµµ·Ï ÇÏ´Â ÇÔ¼ö.
+	//ë³´ì™„í•  ì ì„ ì…ë ¥í•  ìˆ˜ ìˆë„ë¡ í•˜ëŠ” í•¨ìˆ˜.
 	public void writeMore() {
-		System.out.println("´õ ³ªÀº ÇÁ·Î±×·¥À» À§ÇØ º¸¿ÏÇÒ Á¡À» ÀÔ·ÂÇØÁÖ¼¼¿ä. (ÀÔ·Â : 1, Á¾·á : 0)");
+		System.out.println("ë” ë‚˜ì€ í”„ë¡œê·¸ë¨ì„ ìœ„í•´ ë³´ì™„í•  ì ì„ ì…ë ¥í•´ì£¼ì„¸ìš”. (ì…ë ¥ : 1, ì¢…ë£Œ : 0)");
 		int a = Integer.parseInt(sc.nextLine());
 		switch (a) {
 		case 0 : 
-			System.out.println("°¨»çÇÕ´Ï´Ù.");
+			System.out.println("ê°ì‚¬í•©ë‹ˆë‹¤.");
 			break;
 		case 1 : 
 			text = sc.nextLine();
-			System.out.println("°¨»çÇÕ´Ï´Ù. ¿­½ÉÈ÷ º¸¿ÏÇÏ°Ú½À´Ï´Ù.");
+			System.out.println("ê°ì‚¬í•©ë‹ˆë‹¤. ì—´ì‹¬íˆ ë³´ì™„í•˜ê² ìŠµë‹ˆë‹¤.");
 			break;
 		default :
-			System.out.println("ÇÁ·Î±×·¥ Á¾·áÇÕ´Ï´Ù. °¨»çÇÕ´Ï´Ù.");
+			System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œí•©ë‹ˆë‹¤. ê°ì‚¬í•©ë‹ˆë‹¤.");
 			break;
 		}
 	}

@@ -18,23 +18,23 @@ CREATE TABLE STAR(
 	COUNT INT(1),
 	COMMENT VARCHAR(50));
 
-INSERT INTO table¸í VALUES(?, ?, ?)
+INSERT INTO tableëª… VALUES(?, ?, ?)
 
-ÃëÇâ)
-Àå¸£ ÀÔ·Â -> Àå¸£ ¸ñ·Ï (¹Ì½ºÅÍ¸®, )
-±¹°¡ ÀÔ·Â -> Àå¸£ ¸ñ·Ï Áß OO±¹¿¡¼­ º£½ºÆ® ¼¿·¯ ¸ñ·Ï ()
-ÀÛ°¡ ÀÔ·Â -> º£½ºÆ® ¼¿·¯ ¸ñ·Ï Áß ÇØ´ç ÀÛ°¡°¡ ÀÖ´ÂÁö È®ÀÎ ÈÄ 1) ÀÖÀ¸¸é ÀÛ°¡ Ã¥ ¸ñ·Ï
-						      2) ¾øÀ¸¸é ´Ù½Ã º£½ºÆ®¼¿·¯ ¸ñ·Ï
-ÁÁ¾ÆÇÏ´Â Ã¥ ÀÔ·Â -> ÀÔ·ÂµÈ µµ¼­ÀÇ Àå¸£, ±¹°¡, ÀÛ°¡¸¦ È®ÀÎ ÈÄ °ãÄ¡´Â °Å ÀÖ´ÂÁö È®ÀÎ
-			1) ÀÖÀ¸¸é °ãÄ¡´Â ¸ñ·Ï
-			2) ¾øÀ¸¸é ¸Þ½ÃÁö(¾÷µ¥ÀÌÆ® ¿¹Á¤ÀÔ´Ï´Ù) Ãâ·Â
+ì·¨í–¥)
+ìž¥ë¥´ ìž…ë ¥ -> ìž¥ë¥´ ëª©ë¡ (ë¯¸ìŠ¤í„°ë¦¬, )
+êµ­ê°€ ìž…ë ¥ -> ìž¥ë¥´ ëª©ë¡ ì¤‘ OOêµ­ì—ì„œ ë² ìŠ¤íŠ¸ ì…€ëŸ¬ ëª©ë¡ ()
+ìž‘ê°€ ìž…ë ¥ -> ë² ìŠ¤íŠ¸ ì…€ëŸ¬ ëª©ë¡ ì¤‘ í•´ë‹¹ ìž‘ê°€ê°€ ìžˆëŠ”ì§€ í™•ì¸ í›„ 1) ìžˆìœ¼ë©´ ìž‘ê°€ ì±… ëª©ë¡
+						      2) ì—†ìœ¼ë©´ ë‹¤ì‹œ ë² ìŠ¤íŠ¸ì…€ëŸ¬ ëª©ë¡
+ì¢‹ì•„í•˜ëŠ” ì±… ìž…ë ¥ -> ìž…ë ¥ëœ ë„ì„œì˜ ìž¥ë¥´, êµ­ê°€, ìž‘ê°€ë¥¼ í™•ì¸ í›„ ê²¹ì¹˜ëŠ” ê±° ìžˆëŠ”ì§€ í™•ì¸
+			1) ìžˆìœ¼ë©´ ê²¹ì¹˜ëŠ” ëª©ë¡
+			2) ì—†ìœ¼ë©´ ë©”ì‹œì§€(ì—…ë°ì´íŠ¸ ì˜ˆì •ìž…ë‹ˆë‹¤) ì¶œë ¥
 
 
-·¹º§)
-³ªÀÌ ÀÔ·Â -> (0~10, 10~20, 20~30, 30~40, 40~50, 50~60)
-Ã¥ ÀÐ´Â ºóµµ ÀÔ·Â ->(2ÁÖÀÏ¿¡ ÇÑ ¹ø ¹Ì¸¸, ÀÌ»ó ~ ³× ¹ø ¹Ì¸¸, ÀÌ»ó ~ ÀÏ°ö ¹ø ¹Ì¸¸, ÀÌ»ó ~¿­ ¹ø ¹Ì¸¸, ÀÌ»ó ~ ¿­¼¼¹ø ¹Ì¸¸, ¸ÅÀÏ¸ÅÀÏ)
+ë ˆë²¨)
+ë‚˜ì´ ìž…ë ¥ -> (0~10, 10~20, 20~30, 30~40, 40~50, 50~60)
+ì±… ì½ëŠ” ë¹ˆë„ ìž…ë ¥ ->(2ì£¼ì¼ì— í•œ ë²ˆ ë¯¸ë§Œ, ì´ìƒ ~ ë„¤ ë²ˆ ë¯¸ë§Œ, ì´ìƒ ~ ì¼ê³± ë²ˆ ë¯¸ë§Œ, ì´ìƒ ~ì—´ ë²ˆ ë¯¸ë§Œ, ì´ìƒ ~ ì—´ì„¸ë²ˆ ë¯¸ë§Œ, ë§¤ì¼ë§¤ì¼)
 
-µÎ²² ÀÔ·Â ->
+ë‘ê»˜ ìž…ë ¥ ->
 
 
 
@@ -44,19 +44,19 @@ INSERT INTO table¸í VALUES(?, ?, ?)
 
 INSERT INTO installway(proname, lev1, lev2, lev3, lev4) VALUES(
 	'java', 
-	'1. oracle È¨ÆäÀÌÁö¿¡ Á¢¼ÓÇÏ¿© JDK¸¦ ´Ù¿î·ÎµåÇÑ´Ù. java version 8 ÃßÃµ', 
-	'2. ¼³Ä¡ ½Ã install option¿¡¼­ development toolÀ» ¼±ÅÃÇÑ´Ù.', 
-	'3. C:/Program Files/Java¿¡ JAVA°¡ ¼³Ä¡µÈ´Ù.', 
-	'4. È¯°æº¯¼ö¸¦ ¼³Á¤ÇÑ´Ù. (±âÅ¸¿¡¼­ ¼³Á¤ ¹æ¹ý º¼ ¼ö ÀÖÀ½)');
+	'1. oracle í™ˆíŽ˜ì´ì§€ì— ì ‘ì†í•˜ì—¬ JDKë¥¼ ë‹¤ìš´ë¡œë“œí•œë‹¤. java version 8 ì¶”ì²œ', 
+	'2. ì„¤ì¹˜ ì‹œ install optionì—ì„œ development toolì„ ì„ íƒí•œë‹¤.', 
+	'3. C:/Program Files/Javaì— JAVAê°€ ì„¤ì¹˜ëœë‹¤.', 
+	'4. í™˜ê²½ë³€ìˆ˜ë¥¼ ì„¤ì •í•œë‹¤. (ê¸°íƒ€ì—ì„œ ì„¤ì • ë°©ë²• ë³¼ ìˆ˜ ìžˆìŒ)');
 
 INSERT INTO installway(proname, lev1, lev2, lev3) VALUES(
 	'python', 
-	'1. ÆÄÀÌ½ã °ø½Ä È¨ÆäÀÌÁö¿¡¼­ Download Python (ÆÄÀÌ½ã ¹öÀü)À» Å¬¸¯ÇÑ´Ù.', 
-	'2. ¼³Ä¡ ÈÄ Add Python (¹öÀü) to PATH ¿É¼ÇÀ» Å¬¸¯ÇÑ´Ù. (º°µµ·Î È¯°æº¯¼ö ¼³Á¤ÇÒ ÇÊ¿ä X)', 
-	'3. C:\Users\User\AppData\Local\Programs\Python¿¡ ÆÄÀÌ½ãÀÌ ¼³Ä¡µÈ´Ù.');
+	'1. íŒŒì´ì¬ ê³µì‹ í™ˆíŽ˜ì´ì§€ì—ì„œ Download Python (íŒŒì´ì¬ ë²„ì „)ì„ í´ë¦­í•œë‹¤.', 
+	'2. ì„¤ì¹˜ í›„ Add Python (ë²„ì „) to PATH ì˜µì…˜ì„ í´ë¦­í•œë‹¤. (ë³„ë„ë¡œ í™˜ê²½ë³€ìˆ˜ ì„¤ì •í•  í•„ìš” X)', 
+	'3. C:\Users\User\AppData\Local\Programs\Pythonì— íŒŒì´ì¬ì´ ì„¤ì¹˜ëœë‹¤.');
 
 INSERT INTO installway(proname, lev1, lev2, lev3) VALUES(
 	'JQuery', 
-	'1. µå¶óÀÌ¹ö ÀÌ¿ë) jquery.com¿¡ Á¢¼ÓÇÏ¿© ¼ÒÇÁÆ®¿þ¾î¸¦ ´Ù¿î·ÎµåÇÑ ÈÄ <script src="jquery-(JQuery¹öÀü).js">¸¦ JQuery¸¦ »ç¿ëÇÒ ÆÄÀÏ¿¡ ÀÛ¼ºÇÑ´Ù.', 
-	'2. CDN ÀÌ¿ë #1) <script src="´Ù¿î·Îµå ¹ÞÀº JQuery ÆÄÀÏÀÇ ¸µÅ© ÁÖ¼Ò">¸¦ JQuery¸¦ »ç¿ëÇÒ ÆÄÀÏ¿¡ ÀÛ¼ºÇÑ´Ù.', 
-	'3. CDN ÀÌ¿ë #2) <script src="https://ajax.googleapis.com/ajax/libs/jquery/(¹öÀü)/jquery.min.js">¸¦ JQuery¸¦ »ç¿ëÇÒ ÆÄÀÏ¿¡ ÀÛ¼ºÇÑ´Ù.');
+	'1. ë“œë¼ì´ë²„ ì´ìš©) jquery.comì— ì ‘ì†í•˜ì—¬ ì†Œí”„íŠ¸ì›¨ì–´ë¥¼ ë‹¤ìš´ë¡œë“œí•œ í›„ <script src="jquery-(JQueryë²„ì „).js">ë¥¼ JQueryë¥¼ ì‚¬ìš©í•  íŒŒì¼ì— ìž‘ì„±í•œë‹¤.', 
+	'2. CDN ì´ìš© #1) <script src="ë‹¤ìš´ë¡œë“œ ë°›ì€ JQuery íŒŒì¼ì˜ ë§í¬ ì£¼ì†Œ">ë¥¼ JQueryë¥¼ ì‚¬ìš©í•  íŒŒì¼ì— ìž‘ì„±í•œë‹¤.', 
+	'3. CDN ì´ìš© #2) <script src="https://ajax.googleapis.com/ajax/libs/jquery/(ë²„ì „)/jquery.min.js">ë¥¼ JQueryë¥¼ ì‚¬ìš©í•  íŒŒì¼ì— ìž‘ì„±í•œë‹¤.');

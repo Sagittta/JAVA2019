@@ -1,14 +1,14 @@
 package practice;
 
-public class °¡¼ö extends ¿¬¿¹ÀÎ {
+public class ê°€ìˆ˜ extends ì—°ì˜ˆì¸ {
 
-	String ´ëÇ¥°î;
+	String ëŒ€í‘œê³¡;
 
-	void °ø¿¬ÇÏ±â() {
-		System.out.println(½Ç¸í + " : " + "°ø¿¬ÇÏ±â");
+	void ê³µì—°í•˜ê¸°() {
+		System.out.println(ì‹¤ëª… + " : " + "ê³µì—°í•˜ê¸°");
 	}
 
-	void °³ÀÎ±âÇÏ±â() {
-		System.out.println(½Ç¸í +" : "+"¼º´ë¸ğ»çÇÏ±â");
+	void ê°œì¸ê¸°í•˜ê¸°() {
+		System.out.println(ì‹¤ëª… +" : "+"ì„±ëŒ€ëª¨ì‚¬í•˜ê¸°");
 	}
 }

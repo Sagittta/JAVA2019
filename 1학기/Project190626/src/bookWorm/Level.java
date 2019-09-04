@@ -21,7 +21,7 @@ public class Level {
 	String sql;
 	int age, often, aLevel, oLevel, level;
 	
-	// Ã¥ ·¹º§ ¼±ÅÃÇÏ´Â ÇÔ¼ö
+	// ì±… ë ˆë²¨ ì„ íƒí•˜ëŠ” í•¨ìˆ˜
 	public void selectLevel() {
 		try {
 			Class.forName(JDBC_DRIVER);
@@ -29,15 +29,15 @@ public class Level {
 			
 			selectAge();
 			
-			System.out.println("ºóµµ¼ö¸¦ ÀÔ·ÂÇÏ½Ã°Ú½À´Ï±î ? (1: Yes, 2: No)");
+			System.out.println("ë¹ˆë„ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ ? (1: Yes, 2: No)");
 			int o = Integer.parseInt(sc.nextLine());
 			switch (o) {
-				// ºóµµ¼ö ÀÔ·ÂÇÏ´Â ÇÔ¼ö ºÒ·¯¿È.
+				// ë¹ˆë„ìˆ˜ ì…ë ¥í•˜ëŠ” í•¨ìˆ˜ ë¶ˆëŸ¬ì˜´.
 				case 1: selectOften();
 				break;
-				case 2: System.out.println("¾Ë°Ú½À´Ï´Ù.");
+				case 2: System.out.println("ì•Œê² ìŠµë‹ˆë‹¤.");
 				break;
-				default: System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				default: System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 				break;
 			}
 			
@@ -48,31 +48,31 @@ public class Level {
 		
 	}
 
-	// ³ªÀÌ ÀÔ·ÂÇÏ´Â ÇÔ¼ö
+	// ë‚˜ì´ ì…ë ¥í•˜ëŠ” í•¨ìˆ˜
 	public void selectAge() {
-		System.out.println("³ªÀÌ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.println("ë‚˜ì´ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		age = Integer.parseInt(sc.nextLine());
 		
-		// ³ªÀÕ´ë¿¡ µû¶ó ·¹º§ÀÌ ´Ş¶óÁöµµ·Ï ÇÔ.
+		// ë‚˜ì‡ëŒ€ì— ë”°ë¼ ë ˆë²¨ì´ ë‹¬ë¼ì§€ë„ë¡ í•¨.
 		if (age > 0) {
 			if (age < 8) {
 				aLevel = 1;
-				System.out.println("´ç½ÅÀÇ ·¹º§Àº 1ÀÔ´Ï´Ù.");
+				System.out.println("ë‹¹ì‹ ì˜ ë ˆë²¨ì€ 1ì…ë‹ˆë‹¤.");
 			} else if (age < 14) {
 				aLevel = 2;
-				System.out.println("´ç½ÅÀÇ ·¹º§Àº 2ÀÔ´Ï´Ù.");
+				System.out.println("ë‹¹ì‹ ì˜ ë ˆë²¨ì€ 2ì…ë‹ˆë‹¤.");
 			} else if (age < 20) {
 				aLevel = 3;
-				System.out.println("´ç½ÅÀÇ ·¹º§Àº 3ÀÔ´Ï´Ù.");
+				System.out.println("ë‹¹ì‹ ì˜ ë ˆë²¨ì€ 3ì…ë‹ˆë‹¤.");
 			} else if (age < 40) {
 				aLevel = 5;
-				System.out.println("´ç½ÅÀÇ ·¹º§Àº 5ÀÔ´Ï´Ù.");
+				System.out.println("ë‹¹ì‹ ì˜ ë ˆë²¨ì€ 5ì…ë‹ˆë‹¤.");
 			} else {
 				aLevel = 4;
-				System.out.println("´ç½ÅÀÇ ·¹º§Àº 4ÀÔ´Ï´Ù.");
+				System.out.println("ë‹¹ì‹ ì˜ ë ˆë²¨ì€ 4ì…ë‹ˆë‹¤.");
 			}
 		} else {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 		}
 		
 		StringBuilder sb = new StringBuilder();
@@ -88,13 +88,13 @@ public class Level {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
-			// rs¿¡ ´õÀÌ»ó °ªÀÌ ¾øÀ¸¸é '¾÷µ¥ÀÌÆ® ¿¹Á¤ÀÔ´Ï´Ù.' ¹®±¸¸¦ Ãâ·ÂÇÔ.
+			// rsì— ë”ì´ìƒ ê°’ì´ ì—†ìœ¼ë©´ 'ì—…ë°ì´íŠ¸ ì˜ˆì •ì…ë‹ˆë‹¤.' ë¬¸êµ¬ë¥¼ ì¶œë ¥í•¨.
 			boolean rsa = rs.next();
 			if (rsa == false) {
-				System.out.println("¾÷µ¥ÀÌÆ® ¿¹Á¤ÀÔ´Ï´Ù.\n");
+				System.out.println("ì—…ë°ì´íŠ¸ ì˜ˆì •ì…ë‹ˆë‹¤.\n");
 			}
 
-			// rsa¿¡ rs.next()¸¦ ³Ö¾î À§ÀÇ if¹®°ú °ãÄ¡Áö ¾Êµµ·Ï ÇÔ. °ª ÇÏ³ª°¡ Àß·Á¼­ ³ª¿ÀÁö ¾Ê´Â ¹®Á¦ ÇØ°á!
+			// rsaì— rs.next()ë¥¼ ë„£ì–´ ìœ„ì˜ ifë¬¸ê³¼ ê²¹ì¹˜ì§€ ì•Šë„ë¡ í•¨. ê°’ í•˜ë‚˜ê°€ ì˜ë ¤ì„œ ë‚˜ì˜¤ì§€ ì•ŠëŠ” ë¬¸ì œ í•´ê²°!
 			while (rsa) {
 				int bookNo1 = rs.getInt("bookNo");
 				String title1 = rs.getString("title");
@@ -102,9 +102,9 @@ public class Level {
 				String country1 = rs.getString("country");
 				int pageNo1 = rs.getInt("pageNo");
 				
-				System.out.println(bookNo1 + ". " + title1 + ",\n\tÀÛ°¡ : " + author1 + ", ±¹°¡ : " + country1 + ", ÆäÀÌÁö ¼ö : " + pageNo1);
+				System.out.println(bookNo1 + ". " + title1 + ",\n\tì‘ê°€ : " + author1 + ", êµ­ê°€ : " + country1 + ", í˜ì´ì§€ ìˆ˜ : " + pageNo1);
 
-				// rsa¿¡ rs.next()°ªÀ» ³Ö¾îÁà¼­ °è¼Ó °»½ÅÀÌ µÇµµ·Ï ÇÔ.
+				// rsaì— rs.next()ê°’ì„ ë„£ì–´ì¤˜ì„œ ê³„ì† ê°±ì‹ ì´ ë˜ë„ë¡ í•¨.
 				rsa = rs.next();
 			}
 			
@@ -116,37 +116,37 @@ public class Level {
 	}
 	
 	public void selectOften() {
-		System.out.println("Ã¥ ÀĞ´Â ºóµµ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä (2ÁÖ ´ÜÀ§) : ");
+		System.out.println("ì±… ì½ëŠ” ë¹ˆë„ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” (2ì£¼ ë‹¨ìœ„) : ");
 		often = Integer.parseInt(sc.nextLine());
 		
-		// 2ÁÖ ´ÜÀ§¿¡ ¸ÂÃç¼­ Ã¥ ÀĞ´Â ºóµµ¼ö¿¡ µû¶ó ·¹º§ÀÌ ´Ş¶óÁöµµ·Ï ÇÔ.
+		// 2ì£¼ ë‹¨ìœ„ì— ë§ì¶°ì„œ ì±… ì½ëŠ” ë¹ˆë„ìˆ˜ì— ë”°ë¼ ë ˆë²¨ì´ ë‹¬ë¼ì§€ë„ë¡ í•¨.
 		if (often > 0 && often < 15) {
 			if (often < 2) {
 				oLevel = 1;
-				System.out.println("´ç½ÅÀÇ ·¹º§Àº 1ÀÔ´Ï´Ù.");
+				System.out.println("ë‹¹ì‹ ì˜ ë ˆë²¨ì€ 1ì…ë‹ˆë‹¤.");
 			} else if (often < 5) {
 				oLevel = 2;
-				System.out.println("´ç½ÅÀÇ ·¹º§Àº 2ÀÔ´Ï´Ù.");
+				System.out.println("ë‹¹ì‹ ì˜ ë ˆë²¨ì€ 2ì…ë‹ˆë‹¤.");
 			} else if (often < 8) {
 				oLevel = 3;
-				System.out.println("´ç½ÅÀÇ ·¹º§Àº 3ÀÔ´Ï´Ù.");
+				System.out.println("ë‹¹ì‹ ì˜ ë ˆë²¨ì€ 3ì…ë‹ˆë‹¤.");
 			} else if (often < 11) {
 				oLevel = 4;
-				System.out.println("´ç½ÅÀÇ ·¹º§Àº 4ÀÔ´Ï´Ù.");
+				System.out.println("ë‹¹ì‹ ì˜ ë ˆë²¨ì€ 4ì…ë‹ˆë‹¤.");
 			} else if (often < 15) {
 				oLevel = 5;
-				System.out.println("´ç½ÅÀÇ ·¹º§Àº 5ÀÔ´Ï´Ù.");
+				System.out.println("ë‹¹ì‹ ì˜ ë ˆë²¨ì€ 5ì…ë‹ˆë‹¤.");
 			} else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 		} else {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 		}
 		
-		// ³ªÀÌ¿Í ºóµµ¼ö ·¹º§À» ÇÕÄ£ ÈÄ Æò±Õ Á¾ÇÕ ·¹º§À» ±¸ÇÔ
+		// ë‚˜ì´ì™€ ë¹ˆë„ìˆ˜ ë ˆë²¨ì„ í•©ì¹œ í›„ í‰ê·  ì¢…í•© ë ˆë²¨ì„ êµ¬í•¨
 		level = Math.round((aLevel + oLevel) / 2);
 		
-		System.out.println("\nÁ¾ÇÕ·¹º§ : " + level + "\n");
+		System.out.println("\nì¢…í•©ë ˆë²¨ : " + level + "\n");
 		
 		StringBuilder sb = new StringBuilder();
 		sql = sb.append("SELECT * FROM booklist WHERE")
@@ -161,16 +161,16 @@ public class Level {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
-			// rs¿¡ ´õÀÌ»ó °ªÀÌ ¾øÀ¸¸é '¾÷µ¥ÀÌÆ® ¿¹Á¤ÀÔ´Ï´Ù.' ¹®±¸¸¦ Ãâ·ÂÇÔ.
+			// rsì— ë”ì´ìƒ ê°’ì´ ì—†ìœ¼ë©´ 'ì—…ë°ì´íŠ¸ ì˜ˆì •ì…ë‹ˆë‹¤.' ë¬¸êµ¬ë¥¼ ì¶œë ¥í•¨.
 			boolean rsa = rs.next();
 			if (rsa == false) {
-				System.out.println("¾÷µ¥ÀÌÆ® ¿¹Á¤ÀÔ´Ï´Ù.\n");
+				System.out.println("ì—…ë°ì´íŠ¸ ì˜ˆì •ì…ë‹ˆë‹¤.\n");
 			}
 			
 			int bookNo1 = 0, pageNo1 = 0;
 			String title1 = null, author1 = null, country1 = null;
 
-			// rsa¿¡ rs.next()¸¦ ³Ö¾î À§ÀÇ if¹®°ú °ãÄ¡Áö ¾Êµµ·Ï ÇÔ. °ª ÇÏ³ª°¡ Àß·Á¼­ ³ª¿ÀÁö ¾Ê´Â ¹®Á¦ ÇØ°á!
+			// rsaì— rs.next()ë¥¼ ë„£ì–´ ìœ„ì˜ ifë¬¸ê³¼ ê²¹ì¹˜ì§€ ì•Šë„ë¡ í•¨. ê°’ í•˜ë‚˜ê°€ ì˜ë ¤ì„œ ë‚˜ì˜¤ì§€ ì•ŠëŠ” ë¬¸ì œ í•´ê²°!
 			while (rsa) {
 				bookNo1 = rs.getInt("bookNo");
 				title1 = rs.getString("title");
@@ -178,9 +178,9 @@ public class Level {
 				country1 = rs.getString("country");
 				pageNo1 = rs.getInt("pageNo");
 				
-				System.out.println(bookNo1 + ". " + title1 + ",\n\t ÀÛ°¡ : " + author1 + ", ³ª¶ó : " + country1 + ", ÆäÀÌÁö ¼ö : " + pageNo1);
+				System.out.println(bookNo1 + ". " + title1 + ",\n\t ì‘ê°€ : " + author1 + ", ë‚˜ë¼ : " + country1 + ", í˜ì´ì§€ ìˆ˜ : " + pageNo1);
 
-				// rsa¿¡ rs.next()°ªÀ» ³Ö¾îÁà¼­ °è¼Ó °»½ÅÀÌ µÇµµ·Ï ÇÔ.
+				// rsaì— rs.next()ê°’ì„ ë„£ì–´ì¤˜ì„œ ê³„ì† ê°±ì‹ ì´ ë˜ë„ë¡ í•¨.
 				rsa = rs.next();
 			}
 		} catch(Exception e) {

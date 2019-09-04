@@ -9,58 +9,58 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class ¼ºÀûÃ³¸® {
-	static ArrayList<¼ºÀû> ¼ºÀûµé = new ArrayList();
+public class ì„±ì ì²˜ë¦¬ {
+	static ArrayList<ì„±ì > ì„±ì ë“¤ = new ArrayList();
 
 	public static void main(String[] args) {
-		//ÆÄÀÏ ¿¬°á
+		//íŒŒì¼ ì—°ê²°
 		FileReader fr;
 		try {
 			fr = new FileReader("src/writed.txt");
 			
-			//¹öÆÛ ¿¬°á
+			//ë²„í¼ ì—°ê²°
 			BufferedReader br = new BufferedReader(fr);
 			
-			//¹İº¹, ÇÑ ÁÙ ÀĞ±â
+			//ë°˜ë³µ, í•œ ì¤„ ì½ê¸°
 			String line;
 			while((line = br.readLine()) != null) {
-				//ÀÌ¸§	ÁÖ¼Ò		¼öÇĞ		¿µ¾î
+				//ì´ë¦„	ì£¼ì†Œ		ìˆ˜í•™		ì˜ì–´
 				StringTokenizer st = new StringTokenizer(line, "\t");
 				
-				//»õ °´Ã¼ »ı¼º
-				¼ºÀû new¼ºÀû = new ¼ºÀû();
-				new¼ºÀû.setName(st.nextToken());
-				new¼ºÀû.setAddress(st.nextToken());
-				new¼ºÀû.setMath(Double.parseDouble(st.nextToken()));
-				new¼ºÀû.setEnglish(Double.parseDouble(st.nextToken()));
+				//ìƒˆ ê°ì²´ ìƒì„±
+				ì„±ì  newì„±ì  = new ì„±ì ();
+				newì„±ì .setName(st.nextToken());
+				newì„±ì .setAddress(st.nextToken());
+				newì„±ì .setMath(Double.parseDouble(st.nextToken()));
+				newì„±ì .setEnglish(Double.parseDouble(st.nextToken()));
 				
-				//¸®½ºÆ®¿¡ ¸¸µé¾îÁø °´Ã¼ »ı¼º
-				¼ºÀûµé.add(new¼ºÀû);
+				//ë¦¬ìŠ¤íŠ¸ì— ë§Œë“¤ì–´ì§„ ê°ì²´ ìƒì„±
+				ì„±ì ë“¤.add(newì„±ì );
 			}
 			
-			//¸®½ºÆ® Ãâ·Â
-			for (¼ºÀû a : ¼ºÀûµé) {
+			//ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
+			for (ì„±ì  a : ì„±ì ë“¤) {
 				System.out.println(a);
 			}
-/*			for (int i = 0; i < ¼ºÀûµé.size(); i++) {
-				System.out.println(¼ºÀûµé.get(i));
+/*			for (int i = 0; i < ì„±ì ë“¤.size(); i++) {
+				System.out.println(ì„±ì ë“¤.get(i));
 			}
 */
-			//ÆÄÀÏ ÀúÀå
-			//ÆÄÀÏ ¿¬°á
+			//íŒŒì¼ ì €ì¥
+			//íŒŒì¼ ì—°ê²°
 			FileWriter fw = new FileWriter("src/save.txt");
 			
-			//¹öÆÛ ¿¬°á
+			//ë²„í¼ ì—°ê²°
 			BufferedWriter bw = new BufferedWriter(fw);
 			
-			//¾²±â
-			for (¼ºÀû a : ¼ºÀûµé) {
+			//ì“°ê¸°
+			for (ì„±ì  a : ì„±ì ë“¤) {
 				bw.write(a.getName() + "\t" + a.getAddress() + "\t" + a.getMath() + "\t" 
 						+ a.getEnglish() + "\t" + a.getTotal() + "\t" + a.getAverage());
 				bw.newLine();			//bw.write("\n");
 			}
 			
-			//´İ±â
+			//ë‹«ê¸°
 			br.close();
 			bw.close();
 			fr.close();
