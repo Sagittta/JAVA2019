@@ -9,10 +9,10 @@ public class ReadLineFileExam {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		ÆÄÀÏ ÀĞ°Ô ¿¬°áÇÏÀÚ
-//		¹öÆÛ ÀĞ°Ô ¿¬°áÇÏÀÚ
-//		ÇÑÁÙ ÀĞÀÚ
-//		È­¸é¿¡ Ãâ·ÂÇÏÀÚ
+//		íŒŒì¼ ì½ê²Œ ì—°ê²°í•˜ì
+//		ë²„í¼ ì½ê²Œ ì—°ê²°í•˜ì
+//		í•œì¤„ ì½ì
+//		í™”ë©´ì— ì¶œë ¥í•˜ì
 		FileReader fr;
 		try {
 			fr = new FileReader("src/datar.txt");

@@ -9,21 +9,21 @@ import java.util.StringTokenizer;
 public class SungDatasExam {
 
 	public static void main(String[] args) {
-		// ÆÄÀÏ ¿¬°á(writed.txt)
+		// íŒŒì¼ ì—°ê²°(writed.txt)
 		FileReader fr;
 		
 		try {
 			fr = new FileReader("src/writed.txt");
-			//¹öÆÛ ¿¬°á(readLine())
+			//ë²„í¼ ì—°ê²°(readLine())
 			BufferedReader br = new BufferedReader(fr);
-			//ÇÑ ÁÙ ÀĞ°í, \t·Î ¿¬°á
-			String csvStr = "";			//¸ğµç ³»¿ë \t·Î ¿¬°áÇÑ String
-			String tmpStr = "";			//ÇÑ ÁÙ ÀĞ±â¿ë ÀÓ½Ã String
+			//í•œ ì¤„ ì½ê³ , \të¡œ ì—°ê²°
+			String csvStr = "";			//ëª¨ë“  ë‚´ìš© \të¡œ ì—°ê²°í•œ String
+			String tmpStr = "";			//í•œ ì¤„ ì½ê¸°ìš© ì„ì‹œ String
 			while((tmpStr = br.readLine()) != null) {
 				csvStr += tmpStr + "\t";
 			}
 //			System.out.println(csvStr);
-			//tokenÀ¸·Î ³ª´©¾î µ¥ÀÌÅÍ ÀúÀå
+			//tokenìœ¼ë¡œ ë‚˜ëˆ„ì–´ ë°ì´í„° ì €ì¥
 			StringTokenizer parse = new StringTokenizer(csvStr, "\t");
 			int length = parse.countTokens() / 4;
 			String[] name = new String[length];
@@ -41,12 +41,12 @@ public class SungDatasExam {
 				avg[i] = total[i] / 2;
 			}
 			for (int i = 0; i < length; i++) {
-			System.out.println("ÀÌ¸§ : " + name[i] + ", ÁÖ¼Ò : " + address[i] 
-					+ ", ¼öÇĞ : " + math[i] + ", ¿µ¾î : " + english[i]
-							+ ", ÃÑÁ¡ : " + total[i] + ", Æò±Õ : " + avg[i]);
+			System.out.println("ì´ë¦„ : " + name[i] + ", ì£¼ì†Œ : " + address[i] 
+					+ ", ìˆ˜í•™ : " + math[i] + ", ì˜ì–´ : " + english[i]
+							+ ", ì´ì  : " + total[i] + ", í‰ê·  : " + avg[i]);
 			}
-			//total, average °è»ê
-			//Ãâ·Â
+			//total, average ê³„ì‚°
+			//ì¶œë ¥
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
