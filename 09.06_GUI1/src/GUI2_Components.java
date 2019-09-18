@@ -25,6 +25,8 @@ public class GUI2_Components {
         cbox1.addItem("blueberry");
         cbox1.addItem("strawberry");
 
+        JLabel lbResult = new JLabel("Result");
+
         bt0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -42,6 +44,8 @@ public class GUI2_Components {
         panel.add(ta0);
         panel.add(cbox0);
         panel.add(cbox1);
+        panel.add(lbResult);
+
         frame.add(panel);
 
         frame.setPreferredSize(new Dimension(600, 400));
