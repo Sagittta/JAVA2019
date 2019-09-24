@@ -6,21 +6,31 @@ import java.awt.event.ActionListener;
 public class GUI2_Components {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Components");
+
         JPanel panel = new JPanel();
+
         JLabel lb0 = new JLabel("JLabel");
+
         JButton bt0 = new JButton("JButton");
+
         JCheckBox cb0 = new JCheckBox("JCheckBox0");
         JCheckBox cb1 = new JCheckBox("JCheckBox1");
+
         JRadioButton rb0 = new JRadioButton("미성년자");
         JRadioButton rb1 = new JRadioButton("성인");
+
         ButtonGroup bg = new ButtonGroup();
         bg.add(rb0);
         bg.add(rb1);
+
         JTextField tf0 = new JTextField("JTextField");
 //        JTextArea ta0 = new JTextArea("JTextArea");
+
         JTextArea ta0 = new JTextArea(2, 10);
+
         String[] fruits = {"apple", "banana", "kiwi", "mango", "pear", "peach"};
         JComboBox cbox0 = new JComboBox(fruits);
+
         JComboBox<String> cbox1 = new JComboBox<>(fruits);
         cbox1.addItem("blueberry");
         cbox1.addItem("strawberry");
@@ -30,7 +40,21 @@ public class GUI2_Components {
         bt0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                bt0.setText("Clicked");
+                String result = "";
+                result += lb0.getText();
+                result += bt0.getText();
+                result += cb0.isSelected();
+                result += cb1.isSelected();
+                result += rb0.isSelected();
+                result += rb1.isSelected();
+                result += tf0.getText();
+                result += ta0.getText();
+                result += cbox0.getSelectedIndex();
+                result += cbox0.getSelectedItem();
+
+                lbResult.setText(result);       // 버튼이나 체크박스 클릭 후 bt 클릭 시 result 가 바뀜.
+
+//                bt0.setText("Clicked");       // bt0 클릭 시 텍스트를 Clicked 로 바꿔줌.
             }
         });
 
