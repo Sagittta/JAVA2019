@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class GUI2_Components {
     public static void main(String[] args) {
@@ -37,6 +36,26 @@ public class GUI2_Components {
 
         JLabel lbResult = new JLabel("Result");
 
+        rb0.setSelected(true);      // rb0 의 초기값을 true 로 세팅.
+        cb1.setSelected(true);      // cb1 의 초기값을 true 로 세팅.
+        tf0.setText("전화번호를 입력하세요.");        // tf0 의 초기 텍스트를 "" 로 세팅.
+
+        tf0.addFocusListener(new FocusListener() {      // 포커스 이벤트 처리.
+            @Override
+            public void focusGained(FocusEvent e) {     // 포커스 얻음
+                if (tf0.getText().equals("전화번호를 입력하세요.")) {
+                    tf0.setText("");        // tf0 을 클릭하면 "전화번호를 입력하세요." 사라짐.
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {       // 포커스 잃음
+                if (tf0.getText().equals("")) {                 // tf0 가 빈칸일 경우에
+                    tf0.setText("전화번호를 입력하세요.");        // tf0 에서 포커스를 변경하면 "전화번호를 입력하세요." 생김.
+                }
+            }
+        });
+
         bt0.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -57,6 +76,28 @@ public class GUI2_Components {
 //                bt0.setText("Clicked");       // bt0 클릭 시 텍스트를 Clicked 로 바꿔줌.
             }
         });
+
+        ItemListener il = new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getSource() == cb0) {
+                    System.out.println("JCheckbox0 : " + cb0.isSelected());
+                } else if (e.getSource() == cb1) {
+                    System.out.println("JCheckbox1 : " + cb1.isSelected());
+                } else if (e.getSource() == rb0) {
+                    System.out.println("미성년자 : " + rb0.isSelected());
+                } else if (e.getSource() == rb1) {
+                    System.out.println("성인 : " + rb1.isSelected());
+                } else if (e.getSource() == cbox0) {
+                    System.out.println(cbox0.getSelectedItem());
+                }
+            }
+        };
+        cb0.addItemListener(il);
+        cb1.addItemListener(il);
+        rb0.addItemListener(il);
+        rb1.addItemListener(il);
+        cbox0.addItemListener(il);
 
         panel.add(lb0);
         panel.add(bt0);
