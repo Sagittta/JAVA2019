@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class GUI3_Layout {
+public class GUI3_Layout_FlowLayout {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         JPanel panel = new JPanel();
