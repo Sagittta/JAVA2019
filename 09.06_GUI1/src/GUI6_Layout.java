@@ -12,6 +12,7 @@ public class GUI6_Layout {
         panel.setLayout(bl);
 
         JLabel lbTitle = new JLabel("아마스빈");
+        lbTitle.setHorizontalAlignment(JLabel.CENTER);
         JTextArea taList = new JTextArea(1, 30);
         JPanel eastPanel = new JPanel();
         int sum = 10000;
