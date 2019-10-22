@@ -88,17 +88,10 @@ public class GUI2_Components {
         rb1.addItemListener(il);
         cbox0.addItemListener(il);
 
-        panel.add(lb0);
-        panel.add(bt0);
-        panel.add(cb0);
-        panel.add(cb1);
-        panel.add(rb0);
-        panel.add(rb1);
-        panel.add(tf0);
-        panel.add(ta0);
-        panel.add(cbox0);
-        panel.add(cbox1);
-        panel.add(lbResult);
+        panel.add(lb0);     panel.add(bt0);     panel.add(cb0);
+        panel.add(cb1);     panel.add(rb0);     panel.add(rb1);
+        panel.add(tf0);     panel.add(ta0);     panel.add(cbox0);
+        panel.add(cbox1);   panel.add(lbResult);
 
         frame.add(panel);
 
@@ -108,7 +101,11 @@ public class GUI2_Components {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    private static void showResult(JLabel lb0, JButton bt0, JCheckBox cb0, JCheckBox cb1, JRadioButton rb0, JRadioButton rb1, JTextField tf0, JTextArea ta0, JComboBox cbox0, JLabel lbResult) {
+    private static void showResult(JLabel lb0, JButton bt0,
+                                   JCheckBox cb0, JCheckBox cb1,
+                                   JRadioButton rb0, JRadioButton rb1,
+                                   JTextField tf0, JTextArea ta0,
+                                   JComboBox cbox0, JLabel lbResult) {
         String result = "";
         result += lb0.getText();
         result += bt0.getText();
@@ -121,6 +118,7 @@ public class GUI2_Components {
         result += cbox0.getSelectedIndex();
         result += cbox0.getSelectedItem();
 
-        lbResult.setText(result);       // 버튼이나 체크박스 클릭 후 bt 클릭 시 result 가 바뀜.
+        lbResult.setText(result);
+        // 버튼이나 체크박스 클릭 후 bt 클릭 시 result 가 바뀜.
     }
 }
